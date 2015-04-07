@@ -6,14 +6,14 @@ Taskpirate is a pluggable system for TaskWarrior python hooks.
 Why?
 ----
 
-* simpler hooks
+Simpler hooks:
 
     def hook_example(task):
         task['description'] += "changed by a hook"
 
 The above is fully working example, no more boilerplate needed.
 
-* much faster execution time
+Much faster execution time in case of multiple hooks (read the more details section).
 
 Install
 -------
