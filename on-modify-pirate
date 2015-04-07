@@ -11,6 +11,7 @@ def find_hooks(file_prefix):
     # Find all files in subdirectories whose names start with <file_prefix>
     file_pattern = os.path.dirname(__file__) + '/*/' + file_prefix + "*.py"
     module_paths = [f for f in glob.glob(file_pattern) if os.path.isfile(f)]
+    module_paths.sort()
 
     # Gather all hooks in these files
     hooks = []
