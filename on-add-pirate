@@ -1,0 +1,11 @@
+#!/usr/bin/python
+
+from tasklib.task import TaskWarrior, Task
+import pirate_add
+
+task = Task.from_input()
+
+for hook in pirate_add.hooks:
+    hook(task)
+
+print task.export_data()
