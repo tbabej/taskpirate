@@ -21,6 +21,7 @@ def find_hooks(file_prefix):
         module_dir = os.path.dirname(module_path)
         module_filename = os.path.basename(module_path)
         module_name = 'pirate_{0}_{1}'.format(module_dir, module_filename)
+        module_name = module_name.replace('.', '_')
         module = imp.load_source(module_name, module_path)
 
         # Find all hook methods available
