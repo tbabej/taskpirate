@@ -4,7 +4,7 @@ import glob
 import imp
 import os
 
-from tasklib.task import TaskWarrior, Task
+from tasklib import TaskWarrior, Task
 
 
 def find_hooks(file_prefix):
