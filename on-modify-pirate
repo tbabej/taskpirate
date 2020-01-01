@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 
 import glob
-import imp
+from types import ModuleType
+from importlib.machinery import SourceFileLoader, ModuleSpec
+from importlib.util import module_from_spec
 import os
 
 from tasklib import TaskWarrior, Task
@@ -22,7 +24,10 @@ def find_hooks(file_prefix):
         module_filename = os.path.basename(module_path)
         module_name = 'pirate_{0}_{1}'.format(module_dir, module_filename)
         module_name = module_name.replace('.', '_')
-        module = imp.load_source(module_name, module_path)
+        loader = SourceFileLoader(module_name, module_path)
+        spec = ModuleSpec(module_name, loader, origin=module_path)
+        module = module_from_spec(spec)
+        loader.exec_module(module)
 
         # Find all hook methods available
         module_hooks = [
