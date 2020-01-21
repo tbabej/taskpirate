@@ -22,7 +22,7 @@ You'll need tasklib as a dependency:
 
     pip install --user git+git://github.com/tbabej/tasklib@develop
 
-Then you need to drop ```on-add-pirate``` and ```on-modify-pirate``` into ~/.task/hooks/.
+Then you need to save ```on-add-pirate``` and ```on-modify-pirate``` from this repository into ~/.task/hooks/.
 
 After that, you can just clone any taskpirate-enabled hook as a subfolder into ~/.task/hooks/:
 
